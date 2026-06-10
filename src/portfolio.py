@@ -237,7 +237,7 @@ def get_discrete_allocation(weights: dict, prices: pd.DataFrame,
     w_series = pd.Series(weights)
     latest_prices = latest_prices[w_series.index]
 
-    da = DiscreteAllocation(w_series, latest_prices, total_portfolio_value=total_portfolio_value)
+    da = DiscreteAllocation(w_series.to_dict(), latest_prices, total_portfolio_value=total_portfolio_value)
     allocation, leftover = da.greedy_portfolio()
     return {"shares": allocation, "leftover_cash": round(leftover, 2)}
 
