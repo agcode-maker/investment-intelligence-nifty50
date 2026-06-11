@@ -67,7 +67,7 @@ investment-intelligence-nifty50/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/investment-intelligence-nifty50.git
+git clone https://github.com/agcode-maker/investment-intelligence-nifty50.git
 cd investment-intelligence-nifty50
 ```
 
