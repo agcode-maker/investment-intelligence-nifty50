@@ -57,6 +57,18 @@ def _prepare_xy(df, target, feature_cols=None):
     return clean[feat].values, clean[target].values, clean['Date'].values, feat
 
 
+def _align_features(df: pd.DataFrame, feature_names: list) -> pd.DataFrame:
+    """
+    Ensure df has exactly feature_names columns in the right order.
+    Missing columns are filled with 0. Prevents feature-count mismatch at predict time.
+    """
+    df = df.copy()
+    for col in feature_names:
+        if col not in df.columns:
+            df[col] = 0.0
+    return df[feature_names]
+
+
 def _add_extra_features(df):
     """Add features not in indicators.py that predictors need."""
     df = df.copy()
@@ -100,13 +112,11 @@ class DirectionClassifier:
         return self
 
     def predict(self, df):
-        feat = _get_features(df, self.feature_names_)
-        X = df[feat].dropna().values
+        X = _align_features(df, self.feature_names_).fillna(0).values
         return self.model.predict(self.scaler.transform(X))
 
     def predict_proba(self, df):
-        feat = _get_features(df, self.feature_names_)
-        X = df[feat].dropna().values
+        X = _align_features(df, self.feature_names_).fillna(0).values
         return self.model.predict_proba(self.scaler.transform(X))
 
     def evaluate(self, df):
@@ -168,8 +178,7 @@ class ReturnForecaster:
         self.is_fitted = True; return self
 
     def predict(self, df):
-        feat = _get_features(df, self.feature_names_)
-        X = df[feat].dropna().values
+        X = _align_features(df, self.feature_names_).fillna(0).values
         return self.model.predict(self.scaler.transform(X))
 
     def evaluate(self, df):
@@ -224,12 +233,12 @@ class RFDirectionClassifier:
         self.model.fit(self.scaler.fit_transform(X), y); return self
 
     def predict(self, df):
-        feat = _get_features(df, self.feature_names_)
-        return self.model.predict(self.scaler.transform(df[feat].dropna().values))
+        X = _align_features(df, self.feature_names_).fillna(0).values
+        return self.model.predict(self.scaler.transform(X))
 
     def predict_proba(self, df):
-        feat = _get_features(df, self.feature_names_)
-        return self.model.predict_proba(self.scaler.transform(df[feat].dropna().values))
+        X = _align_features(df, self.feature_names_).fillna(0).values
+        return self.model.predict_proba(self.scaler.transform(X))
 
 
 # ── 4. Ensemble Predictor ─────────────────────────────────────────────────────
