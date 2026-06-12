@@ -1,0 +1,1109 @@
+{
+  "ADANIPORTS": {
+    "classifier": {
+      "model": "XGBoost Direction Classifier",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_accuracy": 0.5196,
+      "std_accuracy": 0.0428,
+      "overall_accuracy": 0.5196,
+      "precision_up": 0.5419,
+      "recall_up": 0.6091,
+      "f1_up": 0.5736,
+      "directional_accuracy": 0.5196
+    },
+    "regressor": {
+      "model": "XGBoost Return Forecaster",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_MAE": 5.0064,
+      "mean_RMSE": 6.6021,
+      "mean_R2": -0.6241,
+      "std_MAE": 0.9227
+    }
+  },
+  "ASIANPAINT": {
+    "classifier": {
+      "model": "XGBoost Direction Classifier",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_accuracy": 0.5401,
+      "std_accuracy": 0.0213,
+      "overall_accuracy": 0.5401,
+      "precision_up": 0.5772,
+      "recall_up": 0.6802,
+      "f1_up": 0.6244,
+      "directional_accuracy": 0.5401
+    },
+    "regressor": {
+      "model": "XGBoost Return Forecaster",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_MAE": 3.9444,
+      "mean_RMSE": 6.4835,
+      "mean_R2": -2.5718,
+      "std_MAE": 1.3942
+    }
+  },
+  "AXISBANK": {
+    "classifier": {
+      "model": "XGBoost Direction Classifier",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_accuracy": 0.5058,
+      "std_accuracy": 0.0093,
+      "overall_accuracy": 0.5058,
+      "precision_up": 0.539,
+      "recall_up": 0.6084,
+      "f1_up": 0.5716,
+      "directional_accuracy": 0.5058
+    },
+    "regressor": {
+      "model": "XGBoost Return Forecaster",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_MAE": 5.4765,
+      "mean_RMSE": 7.806,
+      "mean_R2": -0.5243,
+      "std_MAE": 1.5801
+    }
+  },
+  "BAJAJ-AUTO": {
+    "classifier": {
+      "model": "XGBoost Direction Classifier",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_accuracy": 0.5124,
+      "std_accuracy": 0.0251,
+      "overall_accuracy": 0.5124,
+      "precision_up": 0.5384,
+      "recall_up": 0.5118,
+      "f1_up": 0.5248,
+      "directional_accuracy": 0.5124
+    },
+    "regressor": {
+      "model": "XGBoost Return Forecaster",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_MAE": 4.0204,
+      "mean_RMSE": 5.5529,
+      "mean_R2": -1.4424,
+      "std_MAE": 1.1359
+    }
+  },
+  "BAJAJFINSV": {
+    "classifier": {
+      "model": "XGBoost Direction Classifier",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_accuracy": 0.5444,
+      "std_accuracy": 0.0345,
+      "overall_accuracy": 0.5444,
+      "precision_up": 0.5855,
+      "recall_up": 0.6221,
+      "f1_up": 0.6033,
+      "directional_accuracy": 0.5444
+    },
+    "regressor": {
+      "model": "XGBoost Return Forecaster",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_MAE": 4.4428,
+      "mean_RMSE": 5.9297,
+      "mean_R2": -0.4817,
+      "std_MAE": 0.2842
+    }
+  },
+  "BAJFINANCE": {
+    "classifier": {
+      "model": "XGBoost Direction Classifier",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_accuracy": 0.503,
+      "std_accuracy": 0.0207,
+      "overall_accuracy": 0.503,
+      "precision_up": 0.5582,
+      "recall_up": 0.5332,
+      "f1_up": 0.5455,
+      "directional_accuracy": 0.503
+    },
+    "regressor": {
+      "model": "XGBoost Return Forecaster",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_MAE": 5.5407,
+      "mean_RMSE": 8.1217,
+      "mean_R2": -0.3501,
+      "std_MAE": 1.3377
+    }
+  },
+  "BHARTIARTL": {
+    "classifier": {
+      "model": "XGBoost Direction Classifier",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_accuracy": 0.531,
+      "std_accuracy": 0.0244,
+      "overall_accuracy": 0.531,
+      "precision_up": 0.5357,
+      "recall_up": 0.6964,
+      "f1_up": 0.6056,
+      "directional_accuracy": 0.531
+    },
+    "regressor": {
+      "model": "XGBoost Return Forecaster",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_MAE": 4.0855,
+      "mean_RMSE": 5.547,
+      "mean_R2": -0.2158,
+      "std_MAE": 0.6377
+    }
+  },
+  "BPCL": {
+    "classifier": {
+      "model": "XGBoost Direction Classifier",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_accuracy": 0.4975,
+      "std_accuracy": 0.0198,
+      "overall_accuracy": 0.4975,
+      "precision_up": 0.5116,
+      "recall_up": 0.4755,
+      "f1_up": 0.4929,
+      "directional_accuracy": 0.4975
+    },
+    "regressor": {
+      "model": "XGBoost Return Forecaster",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_MAE": 4.9147,
+      "mean_RMSE": 7.0597,
+      "mean_R2": -0.4156,
+      "std_MAE": 0.7743
+    }
+  },
+  "BRITANNIA": {
+    "classifier": {
+      "model": "XGBoost Direction Classifier",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_accuracy": 0.5001,
+      "std_accuracy": 0.0339,
+      "overall_accuracy": 0.5001,
+      "precision_up": 0.5506,
+      "recall_up": 0.5062,
+      "f1_up": 0.5274,
+      "directional_accuracy": 0.5001
+    },
+    "regressor": {
+      "model": "XGBoost Return Forecaster",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_MAE": 4.7922,
+      "mean_RMSE": 8.4224,
+      "mean_R2": -4.2447,
+      "std_MAE": 2.0563
+    }
+  },
+  "CIPLA": {
+    "classifier": {
+      "model": "XGBoost Direction Classifier",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_accuracy": 0.5008,
+      "std_accuracy": 0.0176,
+      "overall_accuracy": 0.5008,
+      "precision_up": 0.5166,
+      "recall_up": 0.5789,
+      "f1_up": 0.546,
+      "directional_accuracy": 0.5008
+    },
+    "regressor": {
+      "model": "XGBoost Return Forecaster",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_MAE": 3.4786,
+      "mean_RMSE": 5.2604,
+      "mean_R2": -0.123,
+      "std_MAE": 0.8915
+    }
+  },
+  "COALINDIA": {
+    "classifier": {
+      "model": "XGBoost Direction Classifier",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_accuracy": 0.4972,
+      "std_accuracy": 0.0228,
+      "overall_accuracy": 0.4972,
+      "precision_up": 0.4755,
+      "recall_up": 0.51,
+      "f1_up": 0.4922,
+      "directional_accuracy": 0.4972
+    },
+    "regressor": {
+      "model": "XGBoost Return Forecaster",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_MAE": 3.7368,
+      "mean_RMSE": 4.7024,
+      "mean_R2": -0.3073,
+      "std_MAE": 0.5266
+    }
+  },
+  "DRREDDY": {
+    "classifier": {
+      "model": "XGBoost Direction Classifier",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_accuracy": 0.5234,
+      "std_accuracy": 0.0191,
+      "overall_accuracy": 0.5234,
+      "precision_up": 0.5641,
+      "recall_up": 0.5602,
+      "f1_up": 0.5622,
+      "directional_accuracy": 0.5234
+    },
+    "regressor": {
+      "model": "XGBoost Return Forecaster",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_MAE": 4.619,
+      "mean_RMSE": 6.7483,
+      "mean_R2": -1.8479,
+      "std_MAE": 0.4006
+    }
+  },
+  "EICHERMOT": {
+    "classifier": {
+      "model": "XGBoost Direction Classifier",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_accuracy": 0.5056,
+      "std_accuracy": 0.0419,
+      "overall_accuracy": 0.5056,
+      "precision_up": 0.5386,
+      "recall_up": 0.5727,
+      "f1_up": 0.5552,
+      "directional_accuracy": 0.5056
+    },
+    "regressor": {
+      "model": "XGBoost Return Forecaster",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_MAE": 5.64,
+      "mean_RMSE": 7.9365,
+      "mean_R2": -0.518,
+      "std_MAE": 0.874
+    }
+  },
+  "GAIL": {
+    "classifier": {
+      "model": "XGBoost Direction Classifier",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_accuracy": 0.5232,
+      "std_accuracy": 0.012,
+      "overall_accuracy": 0.5232,
+      "precision_up": 0.5319,
+      "recall_up": 0.5835,
+      "f1_up": 0.5565,
+      "directional_accuracy": 0.5232
+    },
+    "regressor": {
+      "model": "XGBoost Return Forecaster",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_MAE": 4.0204,
+      "mean_RMSE": 5.7651,
+      "mean_R2": -0.2469,
+      "std_MAE": 0.6091
+    }
+  },
+  "GRASIM": {
+    "classifier": {
+      "model": "XGBoost Direction Classifier",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_accuracy": 0.5098,
+      "std_accuracy": 0.0258,
+      "overall_accuracy": 0.5098,
+      "precision_up": 0.5342,
+      "recall_up": 0.6645,
+      "f1_up": 0.5923,
+      "directional_accuracy": 0.5098
+    },
+    "regressor": {
+      "model": "XGBoost Return Forecaster",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_MAE": 4.4746,
+      "mean_RMSE": 6.3897,
+      "mean_R2": -0.5391,
+      "std_MAE": 1.0687
+    }
+  },
+  "HCLTECH": {
+    "classifier": {
+      "model": "XGBoost Direction Classifier",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_accuracy": 0.5176,
+      "std_accuracy": 0.0292,
+      "overall_accuracy": 0.5176,
+      "precision_up": 0.5655,
+      "recall_up": 0.5283,
+      "f1_up": 0.5463,
+      "directional_accuracy": 0.5176
+    },
+    "regressor": {
+      "model": "XGBoost Return Forecaster",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_MAE": 4.6849,
+      "mean_RMSE": 7.1061,
+      "mean_R2": -0.9633,
+      "std_MAE": 1.0899
+    }
+  },
+  "HDFC": {
+    "classifier": {
+      "model": "XGBoost Direction Classifier",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_accuracy": 0.5323,
+      "std_accuracy": 0.0146,
+      "overall_accuracy": 0.5323,
+      "precision_up": 0.5574,
+      "recall_up": 0.6539,
+      "f1_up": 0.6018,
+      "directional_accuracy": 0.5323
+    },
+    "regressor": {
+      "model": "XGBoost Return Forecaster",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_MAE": 3.9139,
+      "mean_RMSE": 5.5847,
+      "mean_R2": -0.2489,
+      "std_MAE": 1.0922
+    }
+  },
+  "HDFCBANK": {
+    "classifier": {
+      "model": "XGBoost Direction Classifier",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_accuracy": 0.5006,
+      "std_accuracy": 0.0417,
+      "overall_accuracy": 0.5006,
+      "precision_up": 0.5471,
+      "recall_up": 0.6004,
+      "f1_up": 0.5725,
+      "directional_accuracy": 0.5006
+    },
+    "regressor": {
+      "model": "XGBoost Return Forecaster",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_MAE": 3.8357,
+      "mean_RMSE": 5.8896,
+      "mean_R2": -0.612,
+      "std_MAE": 0.9968
+    }
+  },
+  "HEROMOTOCO": {
+    "classifier": {
+      "model": "XGBoost Direction Classifier",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_accuracy": 0.4959,
+      "std_accuracy": 0.0164,
+      "overall_accuracy": 0.4959,
+      "precision_up": 0.5171,
+      "recall_up": 0.4109,
+      "f1_up": 0.4579,
+      "directional_accuracy": 0.4959
+    },
+    "regressor": {
+      "model": "XGBoost Return Forecaster",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_MAE": 4.407,
+      "mean_RMSE": 7.2358,
+      "mean_R2": -2.3623,
+      "std_MAE": 1.2708
+    }
+  },
+  "HINDALCO": {
+    "classifier": {
+      "model": "XGBoost Direction Classifier",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_accuracy": 0.5008,
+      "std_accuracy": 0.014,
+      "overall_accuracy": 0.5008,
+      "precision_up": 0.5146,
+      "recall_up": 0.5713,
+      "f1_up": 0.5415,
+      "directional_accuracy": 0.5008
+    },
+    "regressor": {
+      "model": "XGBoost Return Forecaster",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_MAE": 5.2671,
+      "mean_RMSE": 7.4531,
+      "mean_R2": -0.1599,
+      "std_MAE": 0.9607
+    }
+  },
+  "HINDUNILVR": {
+    "classifier": {
+      "model": "XGBoost Direction Classifier",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_accuracy": 0.5267,
+      "std_accuracy": 0.0274,
+      "overall_accuracy": 0.5267,
+      "precision_up": 0.5792,
+      "recall_up": 0.3676,
+      "f1_up": 0.4497,
+      "directional_accuracy": 0.5267
+    },
+    "regressor": {
+      "model": "XGBoost Return Forecaster",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_MAE": 3.0943,
+      "mean_RMSE": 4.095,
+      "mean_R2": -0.1603,
+      "std_MAE": 0.5476
+    }
+  },
+  "ICICIBANK": {
+    "classifier": {
+      "model": "XGBoost Direction Classifier",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_accuracy": 0.5133,
+      "std_accuracy": 0.026,
+      "overall_accuracy": 0.5133,
+      "precision_up": 0.5304,
+      "recall_up": 0.5641,
+      "f1_up": 0.5467,
+      "directional_accuracy": 0.5133
+    },
+    "regressor": {
+      "model": "XGBoost Return Forecaster",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_MAE": 4.9791,
+      "mean_RMSE": 7.0781,
+      "mean_R2": -0.2657,
+      "std_MAE": 1.0529
+    }
+  },
+  "INDUSINDBK": {
+    "classifier": {
+      "model": "XGBoost Direction Classifier",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_accuracy": 0.4979,
+      "std_accuracy": 0.0227,
+      "overall_accuracy": 0.4979,
+      "precision_up": 0.5385,
+      "recall_up": 0.5063,
+      "f1_up": 0.5219,
+      "directional_accuracy": 0.4979
+    },
+    "regressor": {
+      "model": "XGBoost Return Forecaster",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_MAE": 5.5846,
+      "mean_RMSE": 7.6581,
+      "mean_R2": -0.3849,
+      "std_MAE": 1.8442
+    }
+  },
+  "INFRATEL": {
+    "error": "Can only use .dt accessor with datetimelike values"
+  },
+  "INFY": {
+    "classifier": {
+      "model": "XGBoost Direction Classifier",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_accuracy": 0.538,
+      "std_accuracy": 0.0387,
+      "overall_accuracy": 0.538,
+      "precision_up": 0.569,
+      "recall_up": 0.6997,
+      "f1_up": 0.6277,
+      "directional_accuracy": 0.538
+    },
+    "regressor": {
+      "model": "XGBoost Return Forecaster",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_MAE": 4.0368,
+      "mean_RMSE": 6.4808,
+      "mean_R2": -0.2663,
+      "std_MAE": 0.6553
+    }
+  },
+  "IOC": {
+    "classifier": {
+      "model": "XGBoost Direction Classifier",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_accuracy": 0.5065,
+      "std_accuracy": 0.0242,
+      "overall_accuracy": 0.5065,
+      "precision_up": 0.5084,
+      "recall_up": 0.666,
+      "f1_up": 0.5766,
+      "directional_accuracy": 0.5065
+    },
+    "regressor": {
+      "model": "XGBoost Return Forecaster",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_MAE": 4.9473,
+      "mean_RMSE": 7.0953,
+      "mean_R2": -0.4359,
+      "std_MAE": 1.1752
+    }
+  },
+  "ITC": {
+    "classifier": {
+      "model": "XGBoost Direction Classifier",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_accuracy": 0.513,
+      "std_accuracy": 0.0319,
+      "overall_accuracy": 0.513,
+      "precision_up": 0.5239,
+      "recall_up": 0.6278,
+      "f1_up": 0.5712,
+      "directional_accuracy": 0.513
+    },
+    "regressor": {
+      "model": "XGBoost Return Forecaster",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_MAE": 3.3807,
+      "mean_RMSE": 5.5427,
+      "mean_R2": -0.2763,
+      "std_MAE": 0.6498
+    }
+  },
+  "JSWSTEEL": {
+    "classifier": {
+      "model": "XGBoost Direction Classifier",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_accuracy": 0.5155,
+      "std_accuracy": 0.0275,
+      "overall_accuracy": 0.5155,
+      "precision_up": 0.5333,
+      "recall_up": 0.6267,
+      "f1_up": 0.5763,
+      "directional_accuracy": 0.5155
+    },
+    "regressor": {
+      "model": "XGBoost Return Forecaster",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_MAE": 5.9563,
+      "mean_RMSE": 8.6358,
+      "mean_R2": -0.3724,
+      "std_MAE": 1.7818
+    }
+  },
+  "KOTAKBANK": {
+    "classifier": {
+      "model": "XGBoost Direction Classifier",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_accuracy": 0.521,
+      "std_accuracy": 0.027,
+      "overall_accuracy": 0.521,
+      "precision_up": 0.5597,
+      "recall_up": 0.6129,
+      "f1_up": 0.5851,
+      "directional_accuracy": 0.521
+    },
+    "regressor": {
+      "model": "XGBoost Return Forecaster",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_MAE": 4.9893,
+      "mean_RMSE": 7.1251,
+      "mean_R2": -0.3934,
+      "std_MAE": 1.5338
+    }
+  },
+  "LT": {
+    "classifier": {
+      "model": "XGBoost Direction Classifier",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_accuracy": 0.4873,
+      "std_accuracy": 0.0385,
+      "overall_accuracy": 0.4873,
+      "precision_up": 0.4928,
+      "recall_up": 0.7211,
+      "f1_up": 0.5855,
+      "directional_accuracy": 0.4873
+    },
+    "regressor": {
+      "model": "XGBoost Return Forecaster",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_MAE": 4.3494,
+      "mean_RMSE": 6.0669,
+      "mean_R2": -0.1763,
+      "std_MAE": 1.2728
+    }
+  },
+  "MARUTI": {
+    "classifier": {
+      "model": "XGBoost Direction Classifier",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_accuracy": 0.496,
+      "std_accuracy": 0.0185,
+      "overall_accuracy": 0.496,
+      "precision_up": 0.5386,
+      "recall_up": 0.5235,
+      "f1_up": 0.5309,
+      "directional_accuracy": 0.496
+    },
+    "regressor": {
+      "model": "XGBoost Return Forecaster",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_MAE": 4.0028,
+      "mean_RMSE": 5.1955,
+      "mean_R2": -0.3234,
+      "std_MAE": 0.987
+    }
+  },
+  "NESTLEIND": {
+    "classifier": {
+      "model": "XGBoost Direction Classifier",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_accuracy": 0.5304,
+      "std_accuracy": 0.044,
+      "overall_accuracy": 0.5304,
+      "precision_up": 0.5705,
+      "recall_up": 0.4547,
+      "f1_up": 0.5061,
+      "directional_accuracy": 0.5304
+    },
+    "regressor": {
+      "model": "XGBoost Return Forecaster",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_MAE": 3.1381,
+      "mean_RMSE": 4.0842,
+      "mean_R2": -0.5943,
+      "std_MAE": 0.7352
+    }
+  },
+  "NTPC": {
+    "classifier": {
+      "model": "XGBoost Direction Classifier",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_accuracy": 0.5262,
+      "std_accuracy": 0.0323,
+      "overall_accuracy": 0.5262,
+      "precision_up": 0.5007,
+      "recall_up": 0.6808,
+      "f1_up": 0.577,
+      "directional_accuracy": 0.5262
+    },
+    "regressor": {
+      "model": "XGBoost Return Forecaster",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_MAE": 3.2043,
+      "mean_RMSE": 4.2749,
+      "mean_R2": -0.2117,
+      "std_MAE": 0.6474
+    }
+  },
+  "ONGC": {
+    "classifier": {
+      "model": "XGBoost Direction Classifier",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_accuracy": 0.4879,
+      "std_accuracy": 0.0253,
+      "overall_accuracy": 0.4879,
+      "precision_up": 0.494,
+      "recall_up": 0.6906,
+      "f1_up": 0.576,
+      "directional_accuracy": 0.4879
+    },
+    "regressor": {
+      "model": "XGBoost Return Forecaster",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_MAE": 4.4677,
+      "mean_RMSE": 6.6366,
+      "mean_R2": -0.4808,
+      "std_MAE": 0.8459
+    }
+  },
+  "POWERGRID": {
+    "classifier": {
+      "model": "XGBoost Direction Classifier",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_accuracy": 0.527,
+      "std_accuracy": 0.0174,
+      "overall_accuracy": 0.527,
+      "precision_up": 0.5238,
+      "recall_up": 0.5222,
+      "f1_up": 0.523,
+      "directional_accuracy": 0.527
+    },
+    "regressor": {
+      "model": "XGBoost Return Forecaster",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_MAE": 2.62,
+      "mean_RMSE": 3.4725,
+      "mean_R2": -0.3356,
+      "std_MAE": 0.3579
+    }
+  },
+  "RELIANCE": {
+    "classifier": {
+      "model": "XGBoost Direction Classifier",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_accuracy": 0.5184,
+      "std_accuracy": 0.0271,
+      "overall_accuracy": 0.5184,
+      "precision_up": 0.5467,
+      "recall_up": 0.6522,
+      "f1_up": 0.5948,
+      "directional_accuracy": 0.5184
+    },
+    "regressor": {
+      "model": "XGBoost Return Forecaster",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_MAE": 3.9609,
+      "mean_RMSE": 5.6242,
+      "mean_R2": -0.1825,
+      "std_MAE": 1.0697
+    }
+  },
+  "SBIN": {
+    "classifier": {
+      "model": "XGBoost Direction Classifier",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_accuracy": 0.5206,
+      "std_accuracy": 0.0153,
+      "overall_accuracy": 0.5206,
+      "precision_up": 0.536,
+      "recall_up": 0.6951,
+      "f1_up": 0.6053,
+      "directional_accuracy": 0.5206
+    },
+    "regressor": {
+      "model": "XGBoost Return Forecaster",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_MAE": 4.9932,
+      "mean_RMSE": 7.1176,
+      "mean_R2": -0.3794,
+      "std_MAE": 0.6191
+    }
+  },
+  "SHREECEM": {
+    "classifier": {
+      "model": "XGBoost Direction Classifier",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_accuracy": 0.5107,
+      "std_accuracy": 0.0332,
+      "overall_accuracy": 0.5107,
+      "precision_up": 0.5482,
+      "recall_up": 0.4953,
+      "f1_up": 0.5204,
+      "directional_accuracy": 0.5107
+    },
+    "regressor": {
+      "model": "XGBoost Return Forecaster",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_MAE": 4.6991,
+      "mean_RMSE": 6.0717,
+      "mean_R2": -0.4399,
+      "std_MAE": 0.9526
+    }
+  },
+  "SUNPHARMA": {
+    "classifier": {
+      "model": "XGBoost Direction Classifier",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_accuracy": 0.5248,
+      "std_accuracy": 0.0335,
+      "overall_accuracy": 0.5248,
+      "precision_up": 0.564,
+      "recall_up": 0.5674,
+      "f1_up": 0.5657,
+      "directional_accuracy": 0.5248
+    },
+    "regressor": {
+      "model": "XGBoost Return Forecaster",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_MAE": 4.4078,
+      "mean_RMSE": 6.6949,
+      "mean_R2": -0.5174,
+      "std_MAE": 1.2173
+    }
+  },
+  "TATAMOTORS": {
+    "classifier": {
+      "model": "XGBoost Direction Classifier",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_accuracy": 0.4985,
+      "std_accuracy": 0.0244,
+      "overall_accuracy": 0.4985,
+      "precision_up": 0.5088,
+      "recall_up": 0.6338,
+      "f1_up": 0.5645,
+      "directional_accuracy": 0.4985
+    },
+    "regressor": {
+      "model": "XGBoost Return Forecaster",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_MAE": 5.3894,
+      "mean_RMSE": 7.5739,
+      "mean_R2": -0.2203,
+      "std_MAE": 0.9469
+    }
+  },
+  "TATASTEEL": {
+    "classifier": {
+      "model": "XGBoost Direction Classifier",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_accuracy": 0.4982,
+      "std_accuracy": 0.0154,
+      "overall_accuracy": 0.4982,
+      "precision_up": 0.5195,
+      "recall_up": 0.5333,
+      "f1_up": 0.5263,
+      "directional_accuracy": 0.4982
+    },
+    "regressor": {
+      "model": "XGBoost Return Forecaster",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_MAE": 5.204,
+      "mean_RMSE": 7.0312,
+      "mean_R2": -0.2206,
+      "std_MAE": 1.2755
+    }
+  },
+  "TCS": {
+    "classifier": {
+      "model": "XGBoost Direction Classifier",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_accuracy": 0.5399,
+      "std_accuracy": 0.0294,
+      "overall_accuracy": 0.5399,
+      "precision_up": 0.5782,
+      "recall_up": 0.5991,
+      "f1_up": 0.5885,
+      "directional_accuracy": 0.5399
+    },
+    "regressor": {
+      "model": "XGBoost Return Forecaster",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_MAE": 3.7074,
+      "mean_RMSE": 5.7539,
+      "mean_R2": -0.7508,
+      "std_MAE": 0.684
+    }
+  },
+  "TECHM": {
+    "classifier": {
+      "model": "XGBoost Direction Classifier",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_accuracy": 0.4832,
+      "std_accuracy": 0.0309,
+      "overall_accuracy": 0.4832,
+      "precision_up": 0.5096,
+      "recall_up": 0.4051,
+      "f1_up": 0.4514,
+      "directional_accuracy": 0.4832
+    },
+    "regressor": {
+      "model": "XGBoost Return Forecaster",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_MAE": 4.381,
+      "mean_RMSE": 6.0449,
+      "mean_R2": -0.4248,
+      "std_MAE": 1.1407
+    }
+  },
+  "TITAN": {
+    "classifier": {
+      "model": "XGBoost Direction Classifier",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_accuracy": 0.5173,
+      "std_accuracy": 0.0304,
+      "overall_accuracy": 0.5173,
+      "precision_up": 0.5638,
+      "recall_up": 0.57,
+      "f1_up": 0.5668,
+      "directional_accuracy": 0.5173
+    },
+    "regressor": {
+      "model": "XGBoost Return Forecaster",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_MAE": 4.8547,
+      "mean_RMSE": 7.0314,
+      "mean_R2": -0.228,
+      "std_MAE": 1.2833
+    }
+  },
+  "ULTRACEMCO": {
+    "classifier": {
+      "model": "XGBoost Direction Classifier",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_accuracy": 0.4942,
+      "std_accuracy": 0.0321,
+      "overall_accuracy": 0.4942,
+      "precision_up": 0.5271,
+      "recall_up": 0.558,
+      "f1_up": 0.5421,
+      "directional_accuracy": 0.4942
+    },
+    "regressor": {
+      "model": "XGBoost Return Forecaster",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_MAE": 3.9387,
+      "mean_RMSE": 5.1363,
+      "mean_R2": -0.4144,
+      "std_MAE": 0.8429
+    }
+  },
+  "UPL": {
+    "classifier": {
+      "model": "XGBoost Direction Classifier",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_accuracy": 0.4887,
+      "std_accuracy": 0.022,
+      "overall_accuracy": 0.4887,
+      "precision_up": 0.5117,
+      "recall_up": 0.5022,
+      "f1_up": 0.5069,
+      "directional_accuracy": 0.4887
+    },
+    "regressor": {
+      "model": "XGBoost Return Forecaster",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_MAE": 5.3019,
+      "mean_RMSE": 7.2409,
+      "mean_R2": -0.4325,
+      "std_MAE": 1.393
+    }
+  },
+  "VEDL": {
+    "classifier": {
+      "model": "XGBoost Direction Classifier",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_accuracy": 0.517,
+      "std_accuracy": 0.0285,
+      "overall_accuracy": 0.517,
+      "precision_up": 0.5265,
+      "recall_up": 0.5611,
+      "f1_up": 0.5432,
+      "directional_accuracy": 0.517
+    },
+    "regressor": {
+      "model": "XGBoost Return Forecaster",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_MAE": 6.4634,
+      "mean_RMSE": 8.899,
+      "mean_R2": -0.2465,
+      "std_MAE": 1.676
+    }
+  },
+  "WIPRO": {
+    "classifier": {
+      "model": "XGBoost Direction Classifier",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_accuracy": 0.5182,
+      "std_accuracy": 0.0325,
+      "overall_accuracy": 0.5182,
+      "precision_up": 0.5481,
+      "recall_up": 0.6036,
+      "f1_up": 0.5745,
+      "directional_accuracy": 0.5182
+    },
+    "regressor": {
+      "model": "XGBoost Return Forecaster",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_MAE": 4.0207,
+      "mean_RMSE": 6.2435,
+      "mean_R2": -0.272,
+      "std_MAE": 0.9359
+    }
+  },
+  "ZEEL": {
+    "classifier": {
+      "model": "XGBoost Direction Classifier",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_accuracy": 0.5072,
+      "std_accuracy": 0.0377,
+      "overall_accuracy": 0.5072,
+      "precision_up": 0.5252,
+      "recall_up": 0.5197,
+      "f1_up": 0.5224,
+      "directional_accuracy": 0.5072
+    },
+    "regressor": {
+      "model": "XGBoost Return Forecaster",
+      "horizon_days": 5,
+      "cv_folds": 5,
+      "mean_MAE": 5.0734,
+      "mean_RMSE": 6.8995,
+      "mean_R2": -0.4734,
+      "std_MAE": 1.025
+    }
+  }
+}
