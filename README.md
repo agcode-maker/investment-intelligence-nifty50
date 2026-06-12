@@ -4,6 +4,15 @@ An AI-powered investment decision-support system built on historical NSE NIFTY-5
 
 ---
 
+## Live Demo
+
+**Deployed on Streamlit Community Cloud:**  
+🔗 https://investment-intelligence-nifty50-xvqb6qdzdvyngwxf47fwdj.streamlit.app/ 
+
+> No setup required — open the link to access the complete NIFTY-50 Investment Intelligence Platform.
+
+---
+
 ## Team
 
 | Name | GitHub |
@@ -18,7 +27,7 @@ An AI-powered investment decision-support system built on historical NSE NIFTY-5
 ```
 investment-intelligence-nifty50/
 │
-├── data/                              # NIFTY-50 CSV files (52 files, not tracked in git)
+├── data/                              # NIFTY-50 CSV files (52 files)
 │   ├── RELIANCE.csv, TCS.csv, ...     # 50 individual stock CSVs
 │   ├── stock_metadata.csv
 │   └── NIFTY50_all.csv
@@ -87,13 +96,8 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### 4. Download the dataset
-Download from Kaggle: https://www.kaggle.com/datasets/rohanrao/nifty50-stock-market-data/data
-
-Extract all CSV files into the `data/` folder. Required files:
-- 50 individual stock CSVs (e.g. `RELIANCE.csv`, `TCS.csv`)
-- `stock_metadata.csv`
-- `NIFTY50_all.csv`
+### 4. Dataset
+The dataset is included in the repository under `data/`. No manual download required.
 
 ---
 
