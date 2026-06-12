@@ -124,6 +124,8 @@ page = st.sidebar.radio("Navigate", [
     "💼 Portfolio Builder",
     "⚠️ Risk Assessment",
     "📊 Market Overview",
+    "🧠 Explainable AI",
+    "🚨 Anomaly Detection",
 ])
 st.sidebar.markdown("---")
 st.sidebar.caption("Data: NSE NIFTY-50 | Jan 2000 – Apr 2021")
@@ -748,3 +750,236 @@ elif page == "📊 Market Overview":
                         'var_95_daily_pct','risk_level']
         avail = [c for c in display_cols if c in risk_df.columns]
         st.dataframe(risk_df[avail].round(3), use_container_width=True)
+
+# ══════════════════════════════════════════════════════════════════════════════
+# PAGE 7: EXPLAINABLE AI (SHAP)
+# ══════════════════════════════════════════════════════════════════════════════
+elif page == "🧠 Explainable AI":
+    st.title("🧠 Explainable AI — SHAP Analysis")
+    st.markdown("Understand **why** the model makes each prediction using SHAP (SHapley Additive exPlanations).")
+
+    col1, col2 = st.columns([2, 1])
+    with col1:
+        symbol = st.selectbox("Select Stock", symbols,
+                               format_func=lambda s: f"{s}  —  {sector_map.get(s,'')}")
+    with col2:
+        n_samples = st.slider("Recent days to analyse", 100, 500, 300, step=50)
+
+    if st.button("🔍 Compute SHAP Explanations"):
+        import shap
+        from src.predictor import _align_features, BASE_FEATURES
+        import joblib
+
+        with st.spinner("Loading model and computing SHAP values..."):
+            df = get_stock_with_indicators(symbol)
+
+            model_path = os.path.join('models', f'{symbol}_direction_clf.pkl')
+            if not os.path.exists(model_path):
+                st.warning(f"No saved model for {symbol}. Training now — this takes ~1 minute...")
+                from src.predictor import EnsemblePredictor
+                predictor = EnsemblePredictor(horizon=5)
+                predictor.train(df)
+                predictor.save(symbol)
+
+            clf_obj       = joblib.load(model_path)
+            xgb_model     = clf_obj['model']
+            scaler        = clf_obj['scaler']
+            feature_names = clf_obj['features']
+
+            X_df     = _align_features(df, feature_names).fillna(0).tail(n_samples)
+            X_scaled = pd.DataFrame(scaler.transform(X_df.values), columns=feature_names)
+
+            explainer   = shap.TreeExplainer(xgb_model)
+            shap_values = explainer.shap_values(X_scaled)
+
+        st.success(f"SHAP values computed for {n_samples} recent trading days.")
+
+        # ── Global importance ─────────────────────────────────────────────────
+        st.subheader("Global Feature Importance")
+        st.markdown("Mean absolute SHAP value — how much each feature impacts predictions on average.")
+
+        mean_shap = pd.Series(np.abs(shap_values).mean(axis=0),
+                              index=feature_names).sort_values(ascending=False).head(20)
+        fig = px.bar(x=mean_shap.values, y=mean_shap.index,
+                     orientation='h', color=mean_shap.values,
+                     color_continuous_scale='Teal',
+                     labels={'x': 'Mean |SHAP value|', 'y': 'Feature'},
+                     title=f"{symbol} — Top 20 Features by Global SHAP Importance")
+        fig.update_layout(height=550, coloraxis_showscale=False,
+                          yaxis={'categoryorder': 'total ascending'},
+                          margin=dict(l=0, r=0, t=50, b=0))
+        st.plotly_chart(fig, use_container_width=True)
+
+        # ── Local explanation for latest prediction ───────────────────────────
+        st.subheader("Local Explanation — Most Recent Prediction")
+        st.markdown("Why did the model predict BUY or SELL for the latest data point?")
+
+        row_shap  = shap_values[-1]
+        base_val  = explainer.expected_value
+        final_val = base_val + row_shap.sum()
+
+        top12_idx    = np.argsort(np.abs(row_shap))[-12:]
+        top12_sorted = top12_idx[np.argsort(row_shap[top12_idx])]
+        feat_labels  = [feature_names[i] for i in top12_sorted]
+        sv           = row_shap[top12_sorted]
+
+        col1, col2, col3 = st.columns(3)
+        col1.metric("Base value (avg)",   f"{base_val:.3f}")
+        col2.metric("SHAP adjustment",    f"{row_shap.sum():+.3f}")
+        col3.metric("Final output",        f"{final_val:.3f}",
+                    delta="→ BUY" if final_val > 0.5 else "→ SELL")
+
+        fig2 = go.Figure(go.Bar(
+            x=sv, y=feat_labels, orientation='h',
+            marker_color=['#2ecc71' if v > 0 else '#e74c3c' for v in sv],
+            opacity=0.85,
+        ))
+        fig2.add_vline(x=0, line_color='black', line_width=1)
+        fig2.update_layout(
+            height=420, margin=dict(l=0, r=0, t=40, b=0),
+            title="Feature contributions: green = pushes BUY, red = pushes SELL",
+            xaxis_title="SHAP contribution",
+        )
+        st.plotly_chart(fig2, use_container_width=True)
+
+        # ── SHAP over time for top feature ────────────────────────────────────
+        st.subheader("Top Feature SHAP Over Time")
+        top_feat_idx  = int(np.argmax(np.abs(shap_values).mean(axis=0)))
+        top_feat_name = feature_names[top_feat_idx]
+        dates_shap    = df['Date'].tail(n_samples).values
+        shap_series   = shap_values[:, top_feat_idx]
+
+        fig3 = go.Figure()
+        fig3.add_trace(go.Bar(x=dates_shap, y=shap_series,
+                               marker_color=['#2ecc71' if v > 0 else '#e74c3c' for v in shap_series],
+                               name=f'SHAP ({top_feat_name})', opacity=0.7))
+        fig3.add_hline(y=0, line_color='gray', line_width=0.8)
+        fig3.update_layout(height=320, margin=dict(l=0, r=0, t=40, b=0),
+                            title=f"SHAP value of '{top_feat_name}' over time",
+                            yaxis_title="SHAP contribution")
+        st.plotly_chart(fig3, use_container_width=True)
+
+        st.info("💡 **How to read this:** Positive SHAP = feature pushed the model toward BUY. "
+                "Negative SHAP = feature pushed toward SELL. The magnitude shows how strongly.")
+
+
+# ══════════════════════════════════════════════════════════════════════════════
+# PAGE 8: ANOMALY DETECTION
+# ══════════════════════════════════════════════════════════════════════════════
+elif page == "🚨 Anomaly Detection":
+    st.title("🚨 Market Anomaly Detection")
+    st.markdown("Identify unusual market events: **volatility spikes**, **extreme price moves**, and **abnormal trading volume**.")
+
+    tab1, tab2 = st.tabs(["🔬 Single Stock", "🌐 Universe Scan"])
+
+    with tab1:
+        col1, col2 = st.columns([2, 1])
+        with col1:
+            symbol = st.selectbox("Select Stock", symbols,
+                                   format_func=lambda s: f"{s}  —  {sector_map.get(s,'')}",
+                                   key="anom_stock")
+        with col2:
+            start_yr = st.selectbox("From Year", list(range(2005, 2022)), index=10, key="anom_yr")
+
+        with st.spinner("Detecting anomalies..."):
+            from src.anomaly import detect_all_anomalies, isolation_forest_anomalies, anomaly_summary
+            df_raw  = cached_load_stock(symbol)
+            df_anom = detect_all_anomalies(df_raw.copy())
+            summary = anomaly_summary(df_anom, symbol)
+
+        # Summary metrics
+        col1, col2, col3, col4 = st.columns(4)
+        col1.metric("Volatility Spikes",  summary['vol_spikes'])
+        col2.metric("Extreme Drops",      summary['extreme_drops'])
+        col3.metric("Volume Spikes",      summary['volume_spikes'])
+        col4.metric("Total Anomalies",    f"{summary['any_anomaly']}  ({summary['anomaly_rate_pct']}%)")
+
+        # Filter to selected period
+        df_plot = df_anom[df_anom['Date'].dt.year >= start_yr].copy()
+
+        # Price + anomaly markers
+        fig = make_subplots(rows=3, cols=1, shared_xaxes=True,
+                            row_heights=[0.5, 0.25, 0.25],
+                            vertical_spacing=0.04)
+
+        fig.add_trace(go.Scatter(x=df_plot['Date'], y=df_plot['Close'],
+                                  name='Close', line=dict(color='#2c3e50', width=1)), row=1, col=1)
+
+        any_anom = df_plot[df_plot['AnyAnomaly'] == 1]
+        fig.add_trace(go.Scatter(x=any_anom['Date'], y=any_anom['Close'],
+                                  mode='markers', name='Anomaly',
+                                  marker=dict(color='#e74c3c', size=6, symbol='x')), row=1, col=1)
+
+        # Volatility z-score
+        fig.add_trace(go.Scatter(x=df_plot['Date'], y=df_plot['Vol_Zscore'],
+                                  name='Vol Z-score', line=dict(color='#e67e22', width=1)), row=2, col=1)
+        fig.add_hline(y=2.5, line_dash='dot', line_color='red', row=2, col=1)
+
+        # Volume z-score
+        fig.add_trace(go.Scatter(x=df_plot['Date'],
+                                  y=df_plot['Volume_Zscore'].clip(-2, 10),
+                                  name='Vol Z-score', line=dict(color='#3498db', width=1)), row=3, col=1)
+        fig.add_hline(y=2.5, line_dash='dot', line_color='blue', row=3, col=1)
+
+        fig.update_layout(height=600, title=f"{symbol} — Anomaly Detection",
+                          showlegend=True, margin=dict(l=0, r=0, t=50, b=0))
+        fig.update_yaxes(title_text="Price (₹)",     row=1, col=1)
+        fig.update_yaxes(title_text="Vol Z-score",   row=2, col=1)
+        fig.update_yaxes(title_text="Volume Z-score", row=3, col=1)
+        st.plotly_chart(fig, use_container_width=True)
+
+        # Anomalies by year bar chart
+        st.subheader("Anomalies by Year")
+        by_year = pd.Series(summary['anomalies_by_year']).sort_index()
+        fig2 = px.bar(x=by_year.index.astype(str), y=by_year.values,
+                      color=by_year.values, color_continuous_scale='Reds',
+                      labels={'x': 'Year', 'y': 'Anomaly count'},
+                      title=f"{symbol} — Annual Anomaly Count")
+        crisis_years = {'2008': '2008 GFC', '2011': 'Euro Crisis',
+                        '2015': 'China Slowdown', '2020': 'COVID'}
+        for yr, label in crisis_years.items():
+            if int(yr) in by_year.index:
+                fig2.add_annotation(x=yr, y=by_year[int(yr)],
+                            text=label, showarrow=True,
+                            arrowhead=2, arrowcolor='gray',
+                            font=dict(size=10, color='gray'),
+                            ax=0, ay=-30)
+        fig2.update_layout(height=320, coloraxis_showscale=False,
+                            margin=dict(l=0, r=0, t=50, b=0))
+        st.plotly_chart(fig2, use_container_width=True)
+
+        # Top anomaly events table
+        with st.expander("📋 Top 10 Most Extreme Events"):
+            top_events = df_anom[df_anom['AnyAnomaly'] == 1].copy()
+            top_events['AbsReturn'] = top_events['DailyReturn'].abs()
+            top_events = top_events.nlargest(10, 'AbsReturn')
+            display_cols = ['Date', 'Close', 'DailyReturn', 'Vol_Zscore', 'Volume_Zscore',
+                            'VolSpike', 'ExtremeDrawdown', 'VolumeSpike']
+            avail = [c for c in display_cols if c in top_events.columns]
+            st.dataframe(top_events[avail].round(3).reset_index(drop=True),
+                         use_container_width=True)
+
+    with tab2:
+        st.subheader("Universe-Wide Anomaly Scan")
+        st.markdown("Compare anomaly rates across all 50 stocks to identify structurally riskier names.")
+
+        if st.button("🔍 Run Full Universe Scan (~2 min)"):
+            with st.spinner("Scanning all stocks for anomalies..."):
+                from src.anomaly import scan_universe
+                scan_df = scan_universe()
+                scan_df['sector'] = scan_df.index.map(sector_map)
+                scan_df = scan_df.sort_values('anomaly_rate_pct', ascending=False)
+
+            fig3 = px.bar(scan_df.reset_index(), x='symbol', y='anomaly_rate_pct',
+                          color='sector', title="Anomaly Rate by Stock (% of trading days)",
+                          labels={'anomaly_rate_pct': 'Anomaly Rate (%)', 'symbol': 'Stock'},
+                          color_discrete_sequence=px.colors.qualitative.Set3)
+            fig3.update_layout(height=420, xaxis_tickangle=-45,
+                               margin=dict(l=0, r=0, t=50, b=60))
+            st.plotly_chart(fig3, use_container_width=True)
+
+            st.dataframe(scan_df[['sector', 'vol_spikes', 'extreme_drops',
+                                   'volume_spikes', 'any_anomaly', 'anomaly_rate_pct']].round(2),
+                         use_container_width=True)
+        else:
+            st.info("Click the button above to scan all 50 stocks. Results take about 2 minutes to compute.")
